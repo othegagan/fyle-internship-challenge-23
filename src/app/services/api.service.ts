@@ -1,19 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap, throwError } from 'rxjs';
+import { Observable, tap, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getUser(githubUsername: string) {
-    return this.httpClient.get(`https://api.github.com/users/${githubUsername}`);
+  getUser(githubUsername: string): Observable<any> {
+    return this.httpClient.get(`${environment.API_URL}/users/${githubUsername}?client_id=${environment.CLIENT_ID}&client_secret=${environment.CLIENT_SECRECT}`);
   }
 
-  // implement getRepos method by referring to the documentation. Add proper types for the return type and params 
+  getUserRepos(username: string, page: number, max: number): Observable<any> {
+    const encodedQuery: string = encodeURI(
+      `user:${username} in:name sort:updated-asc`
+    );
+    return this.httpClient.get(
+      `${environment.API_URL}/search/repositories?q=${encodedQuery}&page=${page}&per_page=${max}`
+    );
+  }
+
 }
