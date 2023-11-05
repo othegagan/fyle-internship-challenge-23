@@ -1,10 +1,12 @@
-import { Component, HostBinding, effect, signal, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, } from '@angular/core';
+import { PaginationInstance } from 'ngx-pagination';
 import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   username: string = "";
@@ -25,6 +27,14 @@ export class AppComponent implements OnInit {
     this.username = username;
     console.log(username)
   }
+
+  @Input('data') meals: string[] = [];
+
+  public config: PaginationInstance = {
+    id: 'custom',
+    itemsPerPage: 10,
+    currentPage: 1
+  };
 
 
 }
