@@ -8,33 +8,19 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   username: string = "";
   isLoading: boolean = false;
 
 
   title: string = "";
 
-  ngOnInit() {
-    this.apiService.getUser('johnpapa').subscribe(console.log);
-  }
-
-  constructor(private apiService: ApiService) {
-
-  }
 
   userSearchHandler(username: string) {
     this.username = username;
     console.log(username)
   }
 
-  @Input('data') meals: string[] = [];
-
-  public config: PaginationInstance = {
-    id: 'custom',
-    itemsPerPage: 10,
-    currentPage: 1
-  };
 
 
 }

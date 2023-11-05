@@ -9,7 +9,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-@layer base{
+@layer base {
     input::placeholder {
         content: "Explore GitHub Users and Repositories!";
     }
@@ -20,4 +20,52 @@
             content: "Explore GitHub Users...";
         }
     }
+
+    @keyframes pulse {
+        50% {
+            opacity: .5;
+        }
+    }
+
+    .animate-pulse {
+        animation: pulse 0.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+}
+
+
+.ngx-pagination {
+    padding-left: 0px !important;
+}
+
+.ngx-pagination .current,
+.btn-info {
+    background: #9333ea !important;
+    border: transparent !important;
+    border-radius: 8px !important;
+}
+
+.ngx-pagination .current:hover {
+    background: hsl(271, 81%, 45%) !important;
+    border-radius: 8px !important;
+    border: transparent !important;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    color: #565656 !important;
+    display: block !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px !important;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: #9333ea !important;
+    color: #fff;
+}
+
+.ngx-pagination a:disabled,
+.ngx-pagination button:disabled {
+    background: #9333ea !important;
+    color: #fff;
 }

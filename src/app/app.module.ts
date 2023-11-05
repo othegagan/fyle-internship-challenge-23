@@ -9,6 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { LoaderComponent } from './loader/loader.component';
+import { ErrorComponent } from './error/error.component';
+import { UserReposComponent } from './user-repos/user-repos.component';
+import { RepoComponent } from './repo/repo.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +21,11 @@ import { UserSearchComponent } from './user-search/user-search.component';
     HeaderComponent,
     FooterComponent,
     UserSearchComponent,
+    UserDetailsComponent,
+    LoaderComponent,
+    ErrorComponent,
+    UserReposComponent,
+    RepoComponent,
   ],
   imports: [
     BrowserModule,
