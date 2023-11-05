@@ -1,11 +1,10 @@
 <div class="flex py-[10vh] my-12 justify-center items-center">
     <div class="absolute flex w-full justify-center px-6">
         <div
-            class="relative z-10 flex items-center justify-center w-full max-w-lg gap-2 px-2 m-auto divide-x shadow-lg divide-zinc-600 min-h-12 bg-background rounded-3xl shadow-black/40">
+            class="relative z-10 flex items-center justify-center w-full max-w-lg gap-2 px-2 m-auto divide-x shadow-lg divide-zinc-600 min-h-12 bg-primary rounded-3xl shadow-primary/40 dark:bg-foreground dark:shadow-foreground/40">
 
             <div class="flex items-center self-end flex-1 min-w-0">
-                <form class="w-full h-full" [formGroup]="userSeacrhForm"
-                    (ngSubmit)="onUserSubmit()">
+                <form class="w-full h-full" [formGroup]="userSeacrhForm" (ngSubmit)="onUserSubmit()">
                     <div class="relative w-full flex items-center transition-all duration-300 min-h-full h-fit"
                         style="height: 44px;"><label for="textarea-input" class="sr-only">Prompt</label>
                         <div class="relative flex flex-1 min-w-0 self-start">
@@ -13,18 +12,19 @@
                                 class="flex-[1_0_50%] min-w-[50%] overflow-x-visible -ml-[100%] opacity-0 invisible pointer-events-none">
                                 <div
                                     class="pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm opacity-0 invisible pointer-events-none">
-                                    Explore GitHub Users and Repositories!</div>
+                                    lksdflkasdln</div>
                             </div>
                             <input #usernameInput id="usernameInput" maxlength="50" name="usernameInput"
-                                class="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm"
+                                class="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white dark:text-muted-foreground  bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent  placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm"
                                 formControlName="username" required spellcheck="false" rows="1"
                                 placeholder="Explore GitHub Users and Repositories!" style="height: 44px !important;" />
                         </div>
-                        <div class="absolute text-foreground/50 font-mono text-xs -translate-y-1/2 right-12 top-1/2">
+                        <div
+                            class="absolute hidden md:block text-foreground/50 dark:bg-primary/50 font-mono text-xs -translate-y-1/2 right-12 top-1/2">
                             CTRL + K
                         </div>
                         <button type="submit" id="send-button"
-                            class="flex items-center outline-none transition-colors focus-visible:ring-gs=zinc-400 focus-visible:ring-1 bg-foreground/30 text-foreground/80 justify-center w-8 h-8 rounded-full shrink-0 hover:bg-foreground/20 disabled:opacity-50 disabled:hover:bg-zinc-700"><span
+                            class="flex items-center outline-none transition-colors focus-visible:ring-gs=zinc-400 focus-visible:ring-1 bg-foreground/30 dark:bg-primary/30 text-foreground/80 dark:text-primary/80 justify-center w-8 h-8 rounded-full shrink-0 hover:bg-foreground/20 disabled:opacity-50 disabled:hover:bg-zinc-700"><span
                                 class="sr-only">Send</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"

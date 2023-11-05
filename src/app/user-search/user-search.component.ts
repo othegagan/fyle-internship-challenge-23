@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -26,7 +26,7 @@ export class UserSearchComponent {
 
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private renderer: Renderer2) { }
 
   userSeacrhForm: FormGroup = this.fb.group({
     username: '',
@@ -38,6 +38,29 @@ export class UserSearchComponent {
     console.log(this.userSeacrhForm.value.username)
     this.onUserSearch.emit(this.userSeacrhForm.value.username);
     // this.userSeacrhForm.reset();
+  }
+
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.updatePlaceholderText();
+  }
+
+
+  ngAfterViewInit() {
+    this.updatePlaceholderText();
+  }
+
+
+  updatePlaceholderText() {
+    const inputElement = this.usernameInput.nativeElement;
+
+    if (window.innerWidth < 768) {
+      this.renderer.setAttribute(inputElement, 'placeholder', 'Explore GitHub Users...');
+    } else {
+      this.renderer.setAttribute(inputElement, 'placeholder', 'Explore GitHub Users and Repositories!');
+    }
   }
 
 }
