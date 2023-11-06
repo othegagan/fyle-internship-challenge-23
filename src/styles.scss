@@ -48,6 +48,7 @@
     background: hsl(271, 81%, 45%) !important;
     border-radius: 8px !important;
     border: transparent !important;
+    color: #fff !important;
 }
 
 .ngx-pagination a,
@@ -55,17 +56,19 @@
     color: #565656 !important;
     display: block !important;
     padding: 0.5rem 1rem !important;
-    border-radius: 8px !important;
+    border-radius: 30px !important;
+    background: transparent;
 }
 
 .ngx-pagination a:hover,
 .ngx-pagination button:hover {
-    background: #9333ea !important;
-    color: #fff;
+    background: transparent !important;
+    color: #535353 !important;
+    font-weight: 700 !important;
 }
 
 .ngx-pagination a:disabled,
 .ngx-pagination button:disabled {
     background: #9333ea !important;
-    color: #fff;
+    color: #454545 !important;
 }
