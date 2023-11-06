@@ -1,15 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { UserSearchComponent } from './user-search.component';
-import { FormBuilder, ReactiveFormsModule , FormGroup } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('UserSearchComponent', () => {
   let component: UserSearchComponent;
   let fixture: ComponentFixture<UserSearchComponent>;
+  let debugElement: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [UserSearchComponent],
       providers: [FormBuilder],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
 
@@ -17,9 +20,9 @@ describe('UserSearchComponent', () => {
     fixture = TestBed.createComponent(UserSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    debugElement = fixture.debugElement;
   });
 
-  // Other test cases here...
 
   it('should update the placeholder text based on window width', () => {
     // Mock the nativeElement
@@ -61,4 +64,43 @@ describe('UserSearchComponent', () => {
       'Explore GitHub Users and Repositories!'
     );
   });
+
+
+  it('should set focus on the username input when Ctrl + K is pressed', () => {
+    const event = new KeyboardEvent('keydown', { key: 'k', ctrlKey: true });
+    spyOn(component.usernameInput.nativeElement, 'focus');
+    component.setFocusOnInput(event);
+    expect(component.usernameInput.nativeElement.focus).toHaveBeenCalled();
+  });
+
+  it('should emit the username on user submit', () => {
+    const username = 'testUsername';
+    spyOn(component.onUserSearch, 'emit');
+    component.userSeacrhForm.setValue({ username });
+    component.onUserSubmit();
+    expect(component.onUserSearch.emit).toHaveBeenCalledWith(username);
+  });
+
+  it('should update the placeholder text after ngAfterViewInit', () => {
+    const inputElement = debugElement.nativeElement.querySelector('input');
+    component.ngAfterViewInit();
+    expect(inputElement.getAttribute('placeholder')).toEqual('Explore GitHub Users and Repositories!');
+  });
+
+
+  it('should update the placeholder text based on window size', fakeAsync(() => {
+    const inputElement = debugElement.nativeElement.querySelector('input');
+    const resizeEvent = new Event('resize');
+    window.innerWidth = 767;
+    window.dispatchEvent(resizeEvent);
+    tick();
+
+    expect(inputElement.getAttribute('placeholder')).toEqual('Explore GitHub Users...');
+
+    window.innerWidth = 768;
+    window.dispatchEvent(resizeEvent);
+    tick();
+
+    expect(inputElement.getAttribute('placeholder')).toEqual('Explore GitHub Users and Repositories!');
+  }));
 });

@@ -65,7 +65,7 @@
             <div class="columns-1 gap-4 space-y-6   md:columns-2 lg:gap-8 ">
 
                 <!-- Repo cards -->
-                <a *ngFor="let repo of userRepos.items" [href]="repo.html_url"
+                <a *ngFor="let repo of userRepos.items" [href]="repo?.html_url"
                     class="w-full block relative aspect-preview group rounded-lg bg-white dark:bg-gradient-to-bl  group hover:cursor-pointer  dark:from-[hsl(0,0%,8%)] dark:to-[hsl(0,0%,0%)]  hover:shadow-lg overflow-hidden transition-all hover:border-none shadow hover:dark:from-[hsl(0,0%,9%)] hover:dark:to-[hsl(0,0%,12%)]">
                     <div class="p-4">
                         <a class="mb-4 text-base font-semibold capitalize leading-none tracking-tight dark:text-foreground "

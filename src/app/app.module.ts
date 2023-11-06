@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
+import { BrowserModule , Title} from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -13,7 +13,6 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ErrorComponent } from './error/error.component';
 import { UserReposComponent } from './user-repos/user-repos.component';
-import { RepoComponent } from './repo/repo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { RepoComponent } from './repo/repo.component';
     LoaderComponent,
     ErrorComponent,
     UserReposComponent,
-    RepoComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +32,8 @@ import { RepoComponent } from './repo/repo.component';
     ReactiveFormsModule,
     NgxPaginationModule
   ],
-  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

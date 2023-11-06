@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, HostListener, Output, Renderer2, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 
@@ -26,13 +26,15 @@ export class UserSearchComponent {
     this.usernameInput.nativeElement.focus();
   }
 
+  userSeacrhForm!: FormGroup;
+
+  constructor(private fb: FormBuilder, private renderer: Renderer2) {
+    this.userSeacrhForm = this.fb.group({
+      username: '',
+    });
+  }
 
 
-  constructor(private fb: FormBuilder, private renderer: Renderer2) { }
-
-  userSeacrhForm: FormGroup = this.fb.group({
-    username: '',
-  });
 
   ngOnInit(): void { }
 

@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, } from '@angular/core';
-import { PaginationInstance } from 'ngx-pagination';
-import { ApiService } from './services/api.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +7,23 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  title = "fyle-frontend-challenge";
+export class AppComponent  {
+
   username: string = "";
   isLoading: boolean = false;
 
 
   userSearchHandler(username: string) {
     this.username = username;
+  }
+
+  title = 'fyle-frontend-challenge';
+
+  constructor(private titleService:Title) {
+  }
+
+  ngOnInit() {
+    this.titleService.setTitle(this.title);
   }
 
 }

@@ -11,7 +11,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   getUser(githubUsername: string): Observable<any> {
-    return this.httpClient.get(`${environment.API_URL}/users/${githubUsername}?client_id=${environment.CLIENT_ID}&client_secret=${environment.CLIENT_SECRECT}`);
+    return this.httpClient.get(`${environment.API_URL}/users/${githubUsername}?client_id=${environment.CLIENT_ID}&client_secret=${environment.CLIENT_SECRET}`);
   }
 
   getUserRepos(username: string, page: number, max: number): Observable<any> {
