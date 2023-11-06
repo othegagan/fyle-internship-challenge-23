@@ -35,7 +35,6 @@ export class UserSearchComponent {
   ngOnInit(): void { }
 
   onUserSubmit() {
-    console.log(this.userSeacrhForm.value.username)
     this.onUserSearch.emit(this.userSeacrhForm.value.username);
     // this.userSeacrhForm.reset();
   }

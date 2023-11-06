@@ -12,15 +12,10 @@ export class AppComponent {
   username: string = "";
   isLoading: boolean = false;
 
-
   title: string = "";
-
 
   userSearchHandler(username: string) {
     this.username = username;
-    console.log(username)
   }
-
-
 
 }
