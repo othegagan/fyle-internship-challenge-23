@@ -9,10 +9,10 @@ import { ApiService } from './services/api.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
+  title = "fyle-frontend-challenge";
   username: string = "";
   isLoading: boolean = false;
 
-  title: string = "";
 
   userSearchHandler(username: string) {
     this.username = username;
