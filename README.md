@@ -1,33 +1,66 @@
 # Fyle Frontend Challenge
+<p align="center">
+  <img align=center src="https://github.com/othegagan/fyle-internship-challenge-23/assets/77300329/9db57de8-c8e8-4ebc-896d-f985f7a4b7df" alt="Logo" height="300">
+</p>
 
-## Challenge outline
+<h3 align="center">
+Web application built as a part of Fyle Frontend Internship Challenge 2023.
+</h3>
+<p align="center">
+ It allows users to search for other  GitHub users by username and view their profile, including their repositories, followers, following, location.
+</h4>
+</br></br>
+<img src="https://i.imgur.com/y4oV9VV.png" alt="colored line"  witdth="100px" align="left">
+</br>
 
-This challenge involves implementing application using github api. 
+<p >Live Site :  https://fyle-internship-challenge-23.vercel.app/ </p>
 
-The services that you need to use are already implemented - check out ApiService.
 
-You can see details of this challenge [here](https://fyleuniverse.notion.site/fyleuniverse/Fyle-Frontend-development-challenge-cb5085e5e0864e769e7b98c694400aaa)
+### Key Features 🔥
+- 💫 `Sleek and Responsive Design:` Enjoy a seamless experience with a modern web application crafted using the power of Angular and the elegance of Tailwind CSS.
+- 🌟 `GitHub API Integration:` Harness the capabilities of the GitHub API to effortlessly access user data and repositories.
+- 🌓 `Adaptive Light and Dark Modes:` Seamlessly switch between light and dark modes for a personalized viewing experience.
+- 🚀 `Efficient Search Cache:` Streamline your search experience with built-in cache, reducing API requests for faster data retrieval.
+- 🌐 `User-Friendly Interface:` Navigate effortlessly with an intuitive user interface designed with you in mind.
 
-__Note__ - This challenge is in angular. We work on angular frameworks & after you join we expect the same from you. Hence it is required to complete this assignement in angular itself.
 
-## What happens next?
+## Steps for setup and usage
 
-You will hear back within 48 hours from us via email.
+### Installation 💻
 
-## Installation
+- Go to Angular offical page and follow the instructions to install latest `Angular CLI`
+- Download all the file from the repo and keep it in a folder
+- Run command `npm install` or `yarn install` (yarn is prefered)
+- Running the above command will install all the required dependicies to run the application
+- Go to https://github.com/settings/developers and create a new OAuth App
+- After successfull creation of app, copy the CLIENT_ID and CLIENT_SECERT 
 
-1. Fork this repository to your github account.
-2. Clone the forked repository and proceed with steps mentioned below.
+### Modification 📝
 
-### Install requirements
-* Install angular cli [Ref](https://angular.io/cli)
-* `npm install` in this repository 
+- Go to `environment.ts` in  `./src/environment`
+- Replace the keys & save it. This would give access to more API requests.
+```text
+    CLIENT_ID = 'your client ID'
+    CLIENT_SECRET = 'your client secret'
+```
+- Start the development server by running `ng serve` or `yarn start`
 
-## Development server
+<br> 
+#### 🔥💥💥💥💥 😎 Start exploring awasome `github users` and their `repos`💫
+<br>
 
-Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+At this point application is ready visit `http://localhost:4200/` </br>
+To use application, simply enter the username of any GitHub user into the search bar and hit enter. </br>
+Use `CTRL + K` hotkey shortcut, quickly jump to search bar.
 
-## Further help
+The application will then display the user's profile, including their repositories, followers, following, location, current working status, etc.
 
-Visit the [Angular Documentation](https://angular.io/guide/styleguide) to learn more.
-Styling is to be strictly done with [Tailwind](https://tailwindcss.com/docs/installation).
+<img src="https://i.imgur.com/y4oV9VV.png" alt="colored line" align="center">
+
+### Components 🤖
+![image](https://github.com/othegagan/fyle-internship-challenge-23/assets/77300329/024cd418-07e4-42d2-9dfc-54208d5883ca)
+
+<center>
+<h3 align="center">💫 Designed and Developed with ❤️ by <a href="https://github.com/othegagan/">Gagan Kumar</a> （づ￣3￣）づ╭❤️～ </h3>
+<p align="center"> Don't be shy to contact 🤙 +91-9036644552  <a href="mailto:hellothegagan@gmail.com">hellothegagan@gmail.com</a> 📫</p>
+</center>
