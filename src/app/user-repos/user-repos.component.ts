@@ -58,8 +58,8 @@ export class UserReposComponent implements OnChanges {
   }
 
   maxRepoLimiter(): number {
-    if (this.userRepos.total_count! > 1000) {
-      return (this.userRepos.total_count = 1000);
+    if (this.userRepos.total_count! > 100) {
+      return (this.userRepos.total_count = 100);
     }
     return this.userRepos.total_count;
   }

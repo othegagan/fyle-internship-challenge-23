@@ -86,7 +86,7 @@
         </article>
 
         <!-- Pagination -->
-        <div class="flex items-center py-8">
+        <div class="flex justify-center items-center py-8">
             <ul>
                 <li
                     *ngFor="let repo of userRepos.items | paginate: { itemsPerPage: maxPerPage, currentPage: currentPage, totalItems: maxRepoLimiter() }">
