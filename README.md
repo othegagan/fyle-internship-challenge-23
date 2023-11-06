@@ -63,6 +63,14 @@ The application will then display the user's profile, including their repositori
 ### Components 🤖
 ![image](https://github.com/othegagan/fyle-internship-challenge-23/assets/77300329/024cd418-07e4-42d2-9dfc-54208d5883ca)
 
+
+## Coverage Report
+The test coverage report provides insights into how well the codebase is tested. Below, you'll find a summary of the code coverage.
+
+![image](https://github.com/othegagan/fyle-internship-challenge-23/assets/77300329/81c89add-def4-4b5b-a81c-81814ad8288e)
+
+
+
 <center>
 <h3 align="center">💫 Designed and Developed with ❤️ by <a href="https://github.com/othegagan/">Gagan Kumar</a> （づ￣3￣）づ╭❤️～ </h3>
 <p align="center"> Don't be shy to contact 🤙 +91-9036644552  <a href="mailto:hellothegagan@gmail.com">hellothegagan@gmail.com</a> 📫</p>
