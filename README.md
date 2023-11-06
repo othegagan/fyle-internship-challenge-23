@@ -45,9 +45,12 @@ Web application built as a part of Fyle Frontend Internship Challenge 2023.
 ```
 - Start the development server by running `ng serve` or `yarn start`
 
-<br> 
-#### 🔥💥💥💥💥 😎 Start exploring awasome `github users` and their `repos`💫
-<br>
+  
+###
+
+🔥💥💥💥💥 😎 Start exploring awasome `github users` and their `repos`💫
+
+
 
 At this point application is ready visit `http://localhost:4200/` </br>
 To use application, simply enter the username of any GitHub user into the search bar and hit enter. </br>
